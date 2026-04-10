@@ -1,6 +1,6 @@
 <?php 
 
-  use Repository\ProdutoRepository\ProdutoRepository;
+  use Repository\ProdutoRepository;
 
     require "src/repository/ProdutoRepository.php";
     require "src/connection.php";
@@ -50,19 +50,18 @@
       <tbody>
       <?php foreach($produtos as $produto):?>
       <tr>
-        <td><?= $produto['nome'] ?>/td>
-        <td><?= $produto['tipo'] ?></td>
-        <td><?= $produto['descrico'] ?></td>
-        <td><?= $produto['preco'] ?>/td>
+        <td><?= $produto->getNome() ?> </td>
+        <td><?= $produto->getTipo() ?> </td>
+        <td><?= $produto->getDescricao() ?> </td>
+        <td><?= $produto->getPrecoFormatado() ?> </td>
         <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
         <td>
-        <?php endforeach?>
           <form>
             <input type="button" class="botao-excluir" value="Excluir">
           </form>
         </td>
       </tr>
-      
+      <?php endforeach?>
   <a class="botao-cadastrar" href="cadastrar-produto.html">Cadastrar produto</a>
   <form action="#" method="post">
     <input type="submit" class="botao-cadastrar" value="Baixar Relatório"/>
