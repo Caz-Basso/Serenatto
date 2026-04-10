@@ -1,9 +1,9 @@
-<?php 
+<?php
 
-  require "src/model/Produto.php";
+use Repository\ProdutoRepository;
+
+  require "src/repository/ProdutoRepository.php";
   require "src/connection.php";
-
-  
 ?>
 
 <!doctype html>
@@ -51,8 +51,9 @@
         <td>R$ 25.00</td>
         <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
         <td>
-          <form>
-            <input type="button" class="botao-excluir" value="Excluir">
+          <form action="excluir-produto.php">
+            <input type="hidden" name="id" value="<?= $produto->getId() ?>">
+            <input type="submit" class="botao-excluir" value="Excluir">
           </form>
         </td>
       </tr>
