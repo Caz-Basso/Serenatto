@@ -32,10 +32,7 @@
   <section class="container-admin-banner">
     <img src="img/logo-serenatto-horizontal.png" class="logo-admin" alt="logo-serenatto">
     <h1>Admistração Serenatto</h1>
-    <img class= "ornaments" src          <form action="excluir-produto.php">
-            <input type="hidden" name="id" value="<?= $produto->getId() ?>">
-            <input type="submit" class="botao-excluir" value="Excluir">
-          </form>="img/ornaments-coffee.png" alt="ornaments">
+    <img class= "ornaments" src ="img/ornaments-coffee.png" alt="ornaments">
   </section>
   <h2>Lista de Produtos</h2>
 
@@ -59,7 +56,7 @@
         <td><?= $produto->getPrecoFormatado() ?> </td>
         <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
         <td>
-          <form action="excluir-produto.php">
+          <form action="excluir-produto.php" method="post">
             <input type="hidden" name="id" value="<?= $produto->getId() ?>">
             <input type="submit" class="botao-excluir" value="Excluir">
           </form>
