@@ -1,6 +1,6 @@
 <?php
 
-    use Repository\ProdutoRepository\ProdutoRepository;
+    use Repository\ProdutoRepository;
 
     require "src/repository/ProdutoRepository.php";
     require "src/connection.php";
@@ -28,7 +28,7 @@
     <title>Serenatto - Cardápio</title>
 </head>
 <body>
-    <main>
+    <main>getPreco()
         <section class="container-banner">
             <div class="container-texto-banner">
                 <img src="img/logo-serenatto.png" class="logo" alt="logo-serenatto">

@@ -1,9 +1,13 @@
 <?php 
 
-  require "src/model/Produto.php";
-  require "src/connection.php";
+  use Repository\ProdutoRepository;
 
-  
+    require "src/repository/ProdutoRepository.php";
+    require "src/connection.php";
+
+    $produtosRepository = new ProdutoRepository($pdo);
+    $produtos = $produtosRepository->buscarTodos();
+
 ?>
 
 <!doctype html>
@@ -44,11 +48,12 @@
         </tr>
       </thead>
       <tbody>
+      <?php foreach($produtos as $produto):?>
       <tr>
-        <td>Bife</td>
-        <td>Almoço</td>
-        <td>Delicioso prato</td>
-        <td>R$ 25.00</td>
+        <td><?= $produto->getNome() ?> </td>
+        <td><?= $produto->getTipo() ?> </td>
+        <td><?= $produto->getDescricao() ?> </td>
+        <td><?= $produto->getPrecoFormatado() ?> </td>
         <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
         <td>
           <form>
@@ -56,6 +61,7 @@
           </form>
         </td>
       </tr>
+      <?php endforeach?>
       </tbody>
     </table>
   <a class="botao-cadastrar" href="cadastrar-produto.html">Cadastrar produto</a>
