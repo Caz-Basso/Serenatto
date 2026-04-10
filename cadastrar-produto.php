@@ -1,3 +1,18 @@
+<?php 
+
+use Repository\ProdutoRepository;
+use Model\Produto;
+
+require "src/model/Produto.php";
+require "src/repository/ProdutoRepository.php";
+require "src/connection.php";
+
+if (isset($_POST['cadastro'])){
+    $produto = new Produto(null, $_POST['nome'], $_POST['tipo'], $_POST['descricao'], $_POST['preco']);
+}
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -18,13 +33,13 @@
 </head>
 <body>
 <main>
-    <section class="container-admin-banner">
+    <section class="container-admin-[banner">
         <img src="img/logo-serenatto-horizontal.png" class="logo-admin" alt="logo-serenatto">
         <h1>Cadastro de Produtos</h1>
         <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
     </section>
     <section class="container-form">
-        <form action="#">
+        <form method="post">
 
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
