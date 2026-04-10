@@ -38,7 +38,7 @@
         <section class="container-cafe-manha">
             <div class="container-cafe-manha-titulo">
                 <h3>Opções para o Café</h3>
-                <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                <img classtext= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-cafe-manha-produtos">
                 <?php foreach ($dadosCafe as $cafe):?>
